@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="/IMG/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <title>Personal Website</title>
+    <header class="header">
+      <a href="/index.html" class="logo">Projects • Richard Morarescu</a>
+
+      <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/HTML/homework.html">Homework</a>
+        <a href="/HTML/time2code.html">Time2Code</a>
+        <a href="/HTML/about.html">About</a>
+      </nav>
+    </header>
+  </head>
+  <body>
+    <div class="grid-container">
+      <style>
+        .code-container {
+          position: relative;
+          max-width: 600px;
+          margin: 20px auto;
+          text-align: left;
+        }
+        .copy-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: 5px 10px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+        .copy-button.copied {
+          background-color: #28a745;
+          color: white;
+        }
+        pre {
+          background-color: #302c2c;
+          padding: 20px;
+          border-radius: 5px;
+          overflow-x: auto;
+          white-space: pre-wrap;
+        }
+      </style>
+
+      <div class="code-container">
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <pre id="code-snippet">
+# Seconds in a day program 
+# ------------------------- 
+# Subprograms 
+# ------------------------- 
+def seconds_to_hours(seconds): 
+    return seconds / 3600 
+def seconds_to_minutes(seconds): 
+    return (seconds / 60) % 60 
+def seconds_remaining(seconds): 
+    return seconds % 60 
+# ------------------------- 
+# Main program 
+# ------------------------- 
+seconds = int(input("Enter the number of seconds: ")) 
+hours = seconds_to_hours(seconds) 
+minutes = seconds_to_minutes(seconds) 
+seconds = seconds_remaining(seconds) 
+print(hours, "hours", minutes, "minutes", seconds, "seconds") 
+        </pre>
+      </div>
+      <script>
+        function copyCode() {
+          const codeSnippet = document.getElementById("code-snippet").innerText;
+          navigator.clipboard
+            .writeText(codeSnippet)
+            .then(() => {
+              const button = document.querySelector(".copy-button");
+              button.classList.add("copied");
+              button.innerText = "Copied";
+              setTimeout(() => {
+                button.classList.remove("copied");
+                button.innerText = "Copy";
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error("Failed to copy: ", err);
+            });
+        }
+      </script>
+
+      <script src="/JS/script.js"></script>
+    </div>
+  </body>
+</html>

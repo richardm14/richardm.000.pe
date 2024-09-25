@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="/IMG/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <title>Personal Website</title>
+    <header class="header">
+      <a href="/index.html" class="logo">Projects • Richard Morarescu</a>
+
+      <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/HTML/homework.html">Homework</a>
+        <a href="/HTML/time2code.html">Time2Code</a>
+        <a href="/HTML/about.html">About</a>
+      </nav>
+    </header>
+  </head>
+  <body>
+    <div class="grid-container">
+      <style>
+        .code-container {
+          position: relative;
+          max-width: 600px;
+          margin: 20px auto;
+          text-align: left;
+        }
+        .copy-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: 5px 10px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+        .copy-button.copied {
+          background-color: #28a745;
+          color: white;
+        }
+        pre {
+          background-color: #302c2c;
+          padding: 20px;
+          border-radius: 5px;
+          overflow-x: auto;
+          white-space: pre-wrap;
+        }
+      </style>
+
+      <div class="code-container">
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <pre id="code-snippet">
+# Exam grade program 
+# ------------------------- 
+# Subprograms 
+# ------------------------- 
+def grade (mark): 
+    if mark >= 80: 
+        return "9" 
+    elif mark >= 67: 
+        return "8" 
+    elif mark >= 54: 
+        return 7 
+    elif mark >= 41: 
+        return 6 
+    elif mark >= 31: 
+        return 5 
+    elif mark >= 22: 
+        return 4 
+    elif mark >= 13: 
+        return 3 
+    elif mark >= 4: 
+        return 2 
+    elif mark >= 2: 
+        return 1 
+    else: 
+        return "U" 
+def marks_needed (mark): 
+    if mark >= 80: 
+        return 0 
+    elif mark >= 67: 
+        return 80 - mark 
+    elif mark >= 54: 
+        return 67 - mark 
+    elif mark >= 41: 
+        return 54 - mark 
+    elif mark >= 31: 
+        return 41 - mark 
+    elif mark >= 22: 
+        return 31 - mark 
+    elif mark >= 13: 
+        return 22 - mark 
+    elif mark >= 4: 
+        return 13 - mark 
+    elif mark >= 2: 
+        return 4 - mark 
+    else: return 2 - mark 
+# ------------------------- 
+# Main program 
+# ------------------------- 
+
+my_mark = float(input("Enter your mark 0-100: ")) 
+
+my_grade = grade (my_mark) 
+
+next_grade = marks_needed (my_mark) 
+
+print ("A mark of", my_mark, "is grade", my_grade) 
+
+print ("You needed", next_grade, "more marks to achieve the next grade.") 
+        </pre>
+      </div>
+      <script>
+        function copyCode() {
+          const codeSnippet = document.getElementById("code-snippet").innerText;
+          navigator.clipboard
+            .writeText(codeSnippet)
+            .then(() => {
+              const button = document.querySelector(".copy-button");
+              button.classList.add("copied");
+              button.innerText = "Copied";
+              setTimeout(() => {
+                button.classList.remove("copied");
+                button.innerText = "Copy";
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error("Failed to copy: ", err);
+            });
+        }
+      </script>
+
+      <script src="/JS/script.js"></script>
+    </div>
+  </body>
+</html>

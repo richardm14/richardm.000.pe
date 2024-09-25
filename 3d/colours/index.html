@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OceanCase</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #111;
+        color: #fff;
+        overflow: auto;
+        scroll-behavior: smooth;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Creates a 3x2 grid */
+        grid-template-rows: repeat(2, auto);
+        gap: 20px; /* 20px padding between boxes */
+        padding: 20px; /* Padding around the grid */
+        justify-items: center;
+      }
+
+      .grid-item {
+        background-color: #222;
+        padding: 10px;
+        border-radius: 8px;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      iframe {
+        width: 100%; /* Ensure iframe fits within the grid item */
+        height: 300px; /* Set a fixed height for iframes */
+        border-radius: 8px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #4a4a4a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">
+        <h1>Pure White</h1>
+        <iframe
+          title="a"
+          src="https://sketchfab.com/models/e15bb980aa9e4d6cbeb0c79fe7137c9d/embed"
+          frameborder="0"
+          width="640"
+          height="480"
+          allowfullscreen
+        ></iframe>
+        <p>Model by matttyyo on Sketchfab</p>
+      </div>
+
+      <div class="grid-item">
+        <h1>Oreo</h1>
+        <iframe
+          title="Oreo"
+          src="https://sketchfab.com/models/134cfead69e449c79f6d349c2ea8e31b/embed"
+          frameborder="0"
+          width="640"
+          height="480"
+          allowfullscreen
+        ></iframe>
+        <p>Model by matttyyo on Sketchfab</p>
+      </div>
+
+      <div class="grid-item">
+        <h1>Galaxy</h1>
+        <iframe
+          title="Galaxy"
+          src="https://sketchfab.com/models/69ca0a62652e4d4d974cadfb3988ced5/embed"
+          frameborder="0"
+          width="640"
+          height="480"
+          allowfullscreen
+        ></iframe>
+        <p>Model by matttyyo on Sketchfab</p>
+      </div>
+
+      <div class="grid-item">
+        <h1>Pure Black</h1>
+        <iframe
+          title="Pure Black"
+          src="https://sketchfab.com/models/ce0fcb8f7fa145118a096883d48c59a0/embed"
+          frameborder="0"
+          width="640"
+          height="480"
+          allowfullscreen
+        ></iframe>
+        <p>Model by matttyyo on Sketchfab</p>
+      </div>
+
+      <div class="grid-item">
+        <h1>Starry Night</h1>
+        <iframe
+          title="Starry Night"
+          src="https://sketchfab.com/models/8baf52c56453449d892ed2d4abce8175/embed"
+          frameborder="0"
+          width="640"
+          height="480"
+          allowfullscreen
+        ></iframe>
+        <p>Model by matttyyo on Sketchfab</p>
+      </div>
+    </div>
+  </body>
+</html>
